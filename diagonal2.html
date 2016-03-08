@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		diagonal jquery
+	</title>
+	<link rel="stylesheet" type="text/css" href="animate.css">
+	<link rel="stylesheet" type="text/css" href="diagonal.css">
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.0.min.js"></script>
+    <script src="diagonal.js" type="text/javascript"></script>
+    <style>
+    body {
+    	width: 100%;
+    	height: 100%;
+    }
+     .container {
+      width: 200px;
+      height: 260px;
+      position: relative;
+      float: left;
+      margin: 0 auto 40px;
+      border: 1px solid #CCC;
+      -webkit-perspective: 800px;
+         -moz-perspective: 800px;
+           -o-perspective: 800px;
+              perspective: 800px;
+    }
+
+    .holder {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      
+      -webkit-transition: -webkit-transform 1s;
+         -moz-transition: -moz-transform 1s;
+           -o-transition: -o-transform 1s;
+              transition: transform 1s;
+      -webkit-transform-style: preserve-3d;
+         -moz-transform-style: preserve-3d;
+           -o-transform-style: preserve-3d;
+              transform-style: preserve-3d;
+    }
+
+    .holder.flipped {
+      -webkit-transform: rotateY( 180deg );
+         -moz-transform: rotateY( 180deg );
+           -o-transform: rotateY( 180deg );
+              transform: rotateY( 180deg );
+    }
+
+    .holder figure {
+      display: block;
+      height: 100%;
+      width: 100%;
+      line-height: 260px;
+      color: white;
+      text-align: center;
+      font-weight: bold;
+      font-size: 140px;
+      position: absolute;
+      -webkit-backface-visibility: hidden;
+         -moz-backface-visibility: hidden;
+           -o-backface-visibility: hidden;
+              backface-visibility: hidden;
+    }
+
+    .holder .old {
+      background: transparent;
+    }
+
+    .holder .new {
+      background: transparent;
+      -webkit-transform: rotateY( 180deg );
+         -moz-transform: rotateY( 180deg );
+           -o-transform: rotateY( 180deg );
+              transform: rotateY( 180deg );
+    }
+
+    </style>
+</head>
+<body onload="myfunction()">
+
+
+<section class="container">
+  <div class="holder">
+    <figure class="old"><img src="file:///D:/xampp/htdocs/fo3/roster-update-2016/img/players_old/1_Lewandowski.png"></figure>
+    <figure class="new"><img src="file:///D:/xampp/htdocs/fo3/roster-update-2016/img/players_new/2_lewandowski.png"></figure>
+  </div>
+</section>
+
+
+<section class="container">
+  <div class="holder">
+    <figure class="old"><img src="file:///D:/xampp/htdocs/fo3/roster-update-2016/img/players_old/1_Lewandowski.png"></figure>
+    <figure class="new"><img src="file:///D:/xampp/htdocs/fo3/roster-update-2016/img/players_new/2_lewandowski.png"></figure>
+  </div>
+</section>
+
+<section class="container">
+  <div class="holder">
+    <figure class="old"><img src="file:///D:/xampp/htdocs/fo3/roster-update-2016/img/players_old/1_Lewandowski.png"></figure>
+    <figure class="new"><img src="file:///D:/xampp/htdocs/fo3/roster-update-2016/img/players_new/2_lewandowski.png"></figure>
+  </div>
+</section>
+
+<section id="options">
+    <p><button id="flip">Flip Card</button></p>
+  </section>
+
+
+
+
+<script>
+
+function myfunction() {
+	$(".holder").delay(30000).addClass("flipped");
+}
+
+// var init = function() {
+//   var card = document.getElementById('holder');
+  
+//   document.getElementById('flip').addEventListener( 'click', function(){
+//     card.toggleClassName('flipped');
+//   }, false);
+// };
+
+// window.addEventListener('DOMContentLoaded', init, false);
+</script>
+</body>
+</html>

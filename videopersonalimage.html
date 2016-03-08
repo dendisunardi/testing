@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Video</title>
+	<style type="text/css">
+body {
+  margin: 0;
+  padding: 20px 0 0 0;
+}
+
+.box-video {
+  position: relative;
+  max-width: 590px;
+  margin: 0 auto 20px auto;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.box-video .bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  z-index: 2;
+}
+
+.box-video .video-container {
+  position: relative;
+  margin: 0;
+  z-index: 1;
+}
+
+.box-video .bt-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -30px 0 0 -30px;
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  background: #fff;
+  border-radius: 50%;
+  text-indent: -999em;
+  cursor: pointer;
+  z-index: 2;
+  -webkit-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+}
+
+.box-video .bt-play:after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 0;
+  width: 0;
+  margin: -12px 0 0 -6px;
+  border: solid transparent;
+  border-left-color: #000;
+  border-width: 12px 20px;
+  -webkit-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+}
+
+.box-video:hover .bt-play {
+  transform: scale(1.1);
+}
+
+.box-video.open .bg-video {
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all .6s .8s;
+  transition: all .6s .8s;
+}
+
+.box-video.open .video-container {
+  opacity: 1;
+  -webkit-transition: all .6s .8s;
+  transition: all .6s .8s;
+}
+	</style>
+	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.0.min.js"></script>
+</head>
+<body>
+<div class="box-video">
+  <div class="bg-video" style="background-image: url(https://unsplash.imgix.net/photo-1425036458755-dc303a604201?fit=crop&fm=jpg&q=75&w=1000);">
+    <div class="bt-play">Play</div>
+  </div>
+  <div class="video-container">
+    <iframe width="590" height="332" src="https://www.youtube.com/embed/qIjZqxqDTNM?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+  </div>
+</div>
+
+<div class="box-video">
+  <div class="bg-video" style="background-image: url(https://ununsplash.imgix.net/photo-1418225043143-90858d2301b4?fit=crop&fm=jpg&q=75&w=1000);">
+    <div class="bt-play">Play</div>
+  </div>
+  <div class="video-container">
+    <iframe width="590" height="332" src="//player.vimeo.com/video/123633423?api=1&amp;portrait=0" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+  </div>
+</div>
+
+
+
+<script>
+$(".box-video").click(function() {
+  $('iframe', this)[0].src += "&amp;autoplay=1";
+  $(this).addClass('open');
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="myCtrl">
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
+<script src="ang.js"></script>
+<meta charset=utf-8 />
+<title>JS Bin</title>
+</head>
+<body>
+  <form>
+    <div ng-repeat="lang in languages">
+      <label>{{lang.name}}</label>
+      <input type="range" min="0" max="4" ng-model="lang.value" >
+    </div>
+    <button ng-click="save()">Save</button>
+    <p>{{msg}}</p>
+</form>
+</body>
+</html>

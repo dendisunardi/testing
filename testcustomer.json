@@ -1,0 +1,18 @@
+{
+	"customers": [{
+		"firstName": "John",
+		"lastName": "Doe",
+		"message": "Test message John",
+		"email": "dendi.sunardi@gmail.com"
+	}, {
+		"firstName": "Anna",
+		"lastName": "Smith",
+		"message": "Test message Anna",
+		"email": "anna.smith@gmail.com"
+	}, {
+		"firstName": "Peter",
+		"lastName": "Jones",
+		"message": "Test message Peter",
+		"email": "peter.john@gmail.com"
+	}]
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Seqjs</title>
+<style type="text/css">
+	div {
+		width: 300px;
+		height: 300px;
+		display: block;
+
+	}
+
+	.test {
+		background-color: red;
+	}
+
+	.test2 {
+		background-color: blue;
+	}
+</style>
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.0.min.js"></script>
+</head>
+<body onload="ttt()">
+<div class="test"></div>
+
+<script>
+
+function ttt(){
+	$('div').delay(1000).queue(function(next){
+	      $('div').removeClass('test');
+	      next();
+	}).delay(1000).queue(function(next){
+	      $('div').addClass('test2');
+	      next();
+	});
+}
+
+// function remtest() {
+// 	$('div').removeClass('test');
+// }
+</script>
+</body>
+</html>
